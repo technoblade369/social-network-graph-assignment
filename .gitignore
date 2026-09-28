@@ -1,0 +1,12 @@
+# Compiled executables
+*.exe
+*.out
+social_network
+
+# IDE/editor files
+.vscode/
+.idea/
+
+# OS files
+.DS_Store
+Thumbs.db

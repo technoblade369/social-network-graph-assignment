@@ -1,0 +1,49 @@
+SOCIAL NETWORK GRAPH REPRESENTATION
+Vertices: A B C D E F
+Edges: A-B, A-C, B-D, B-E, C-F, E-F
+
+--- Adjacency Matrix ---
+    A B C D E F 
+A | 0 1 1 0 0 0 
+B | 1 0 0 1 1 0 
+C | 1 0 0 0 0 1 
+D | 0 1 0 0 0 0 
+E | 0 1 0 0 0 1 
+F | 0 0 1 0 1 0 
+
+--- Adjacency List ---
+A -> B -> C
+B -> A -> D -> E
+C -> A -> F
+D -> B
+E -> B -> F
+F -> C -> E
+
+BFS using Adjacency Matrix: A B C D E F 
+Matrix neighbor-cell checks during BFS: 36
+
+BFS using Adjacency List: A B C D E F 
+List neighbor-node inspections during BFS: 12
+
+DFS using Adjacency Matrix: A B D E F C 
+
+DFS using Adjacency List: A B D E F C 
+
+Matrix representation search: Vertex F found at index 5.
+Label comparisons required: 6
+
+Adjacency list search: Vertex F found at list header 5.
+Header-label comparisons required: 6
+
+Matrix edge check B-E: Edge exists (1 matrix-cell access)
+
+List edge check B-E: Edge exists (3 adjacency-node inspections)
+
+--- Complexity Summary ---
+Adjacency Matrix space: O(V^2)
+Adjacency List space:   O(V + E)
+BFS/DFS with Matrix:    O(V^2)
+BFS/DFS with List:      O(V + E)
+Vertex-label search:    O(V) in this implementation for both
+Edge check Matrix:      O(1)
+Edge check List:        O(deg(u)), worst case O(V)
